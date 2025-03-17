@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix Immobilier Paris</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Évolution des Prix de l'Immobilier à Paris</h1>
+        
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="prix">Prix au m²</button>
+            <button class="tab-btn" data-tab="volume">Volume de Transactions</button>
+            <button class="tab-btn" data-tab="delai">Délai de Vente</button>
+            <button class="tab-btn" data-tab="negociation">Taux de Négociation</button>
+        </div>
+
+        <div class="tab-content active" id="prix-tab">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Prix Médian Actuel</h3>
+                    <p class="price">10 418 €/m²</p>
+                    <p class="evolution">+3% sur 1 an</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Évolution sur 5 ans</h3>
+                    <p class="evolution-5y">-6%</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+            </div>
+            <div class="arrondissements-container">
+                <h2>Prix par Arrondissement</h2>
+                <div id="arrondissements-grid"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="volume-tab">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Volume Mensuel Moyen</h3>
+                    <p class="volume">3 245 transactions</p>
+                    <p class="evolution">-5% sur 1 an</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="volumeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="tab-content" id="delai-tab">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Délai Moyen de Vente</h3>
+                    <p class="delai">45 jours</p>
+                    <p class="evolution">+10 jours vs 2023</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="delaiChart"></canvas>
+            </div>
+            <div class="arrondissements-container">
+                <h2>Délai par Arrondissement</h2>
+                <div id="delai-grid"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="negociation-tab">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Taux Moyen de Négociation</h3>
+                    <p class="negociation">-3.8%</p>
+                    <p class="evolution">+0.5 points vs 2023</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="negociationChart"></canvas>
+            </div>
+            <div class="arrondissements-container">
+                <h2>Taux de Négociation par Arrondissement</h2>
+                <div id="negociation-grid"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
